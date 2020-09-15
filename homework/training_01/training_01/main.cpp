@@ -10,24 +10,19 @@
 class SetValue {
 public:
     int x, y;
-    void setX(int a);
-    void setY(int b);
+    void setValue(int a, int b);
 };
 
-void SetValue::setX(int a){
+void SetValue::setValue(int a, int b){
     x = a;
-};
-
-void SetValue::setY(int b){
     y = b;
 };
 
 int main(int argc, const char * argv[]) {
     SetValue obj;
-    
-    obj.setX(33);
-    obj.setY(44);
+    obj.setValue(33, 44);
     
     std::cout<<"X = "<<obj.x<<" ,Y = "<<obj.y<<std::endl;
     return 0;
 }
+
