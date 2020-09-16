@@ -8,21 +8,37 @@
 #include <iostream>
 
 class SetValue {
-public:
+private:
     int x, y;
-    void setValue(int a, int b);
+public:
+    void setX(int a);
+    void setY(int b);
+    int getX();
+    int getY();
 };
 
-void SetValue::setValue(int a, int b){
+void SetValue::setX(int a){
     x = a;
+};
+
+void SetValue::setY(int b){
     y = b;
+};
+
+int SetValue::getX(){
+    return x;
+};
+
+int SetValue::getY(){
+    return y;
 };
 
 int main(int argc, const char * argv[]) {
     SetValue obj;
-    obj.setValue(33, 44);
     
-    std::cout<<"X = "<<obj.x<<" ,Y = "<<obj.y<<std::endl;
+    obj.setX(33);
+    obj.setY(44);
+    
+    std::cout<<"X = "<<obj.getX()<<" ,Y = "<<obj.getY()<<std::endl;
     return 0;
 }
-
