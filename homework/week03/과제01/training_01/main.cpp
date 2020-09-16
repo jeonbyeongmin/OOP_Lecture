@@ -11,6 +11,10 @@ class SetValue {
 private:
     int x, y;
 public:
+    SetValue() { // SetValue 생성자 - x, y 값 초기화
+        x = 0;
+        y = 0;
+    }
     void setX(int a);
     void setY(int b);
     int getX();
