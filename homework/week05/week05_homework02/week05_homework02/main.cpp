@@ -7,8 +7,24 @@
 
 #include <iostream>
 
+using namespace std;
+
+int i;
+
+class A {
+public:
+    ~A() {
+        i = 10;
+    }
+};
+
+int foo() {
+    i = 3;
+    {A ob;}
+    return i;
+}
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    cout << foo() << endl;
     return 0;
 }
