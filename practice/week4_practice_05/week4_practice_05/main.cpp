@@ -6,9 +6,13 @@
 //
 
 #include <iostream>
+#include <string.h>
+
 
 int main(int argc, const char * argv[]) {
-    const int &x = 5;
-    std::cout<< x << std::endl;
+    std::string str;
+    std::cin >> str;
+    
+    std::cout<< str << std::endl;
     return 0;
 }
