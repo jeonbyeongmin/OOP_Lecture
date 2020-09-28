@@ -6,17 +6,19 @@
 //
 
 #include <iostream>
-void swap(int &first, int &second)
+void swap(int *first, int *second)
 {
-    int temp = first;
-    first = second;
-    second = temp;
+    
+    int temp = *first;
+    std::cout << "temp = " << temp << ", " << "fisrt = " << first << "*first : " << *first<<std::endl;
+    *first = *second;
+    *second = temp;
 }
 
 int main(int argc, const char * argv[]) {
     int a = 2;
     int b = 3;
-    swap(a, b);
+    swap(&a, &b);
     
     std::cout << "a = " << a << ", " << "b = " << b << std::endl;
     return 0;

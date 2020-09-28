@@ -22,7 +22,7 @@ public:
     Animal(Animal& a){
         age = a.age;
         name = new char[strlen(a.name)+1];
-        strcpy(name, a.name); // 얇은 복사
+        strcpy(name, a.name);
     }
     
     void changeName(const char* newName){
