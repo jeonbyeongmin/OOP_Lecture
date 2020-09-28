@@ -20,12 +20,11 @@ public:
 
 int foo() {
     i = 3;
-    A ob;
+    {A ob;}
     return i;
 }
 
 int main(int argc, const char * argv[]) {
     cout << foo() << endl;
-    cout << i << endl;
     return 0;
 }
