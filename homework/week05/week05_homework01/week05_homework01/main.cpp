@@ -41,5 +41,5 @@ int main(int argc, const char * argv[]) {
     
     A.printAnimal();
     B.printAnimal();
-    return 0;
+    getchar();
 }
