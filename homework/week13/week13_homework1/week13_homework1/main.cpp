@@ -51,7 +51,7 @@ int main() {
 
     std::cout << "내림차순 정렬" << std::endl;
     compGreater compGreater;
-    bubble_sort(values.begin(), values.end(), compGreater); // compLess라는 functor에 의해 내림차순 정렬
+    bubble_sort(values.begin(), values.end(), compGreater); // compGreater라는 functor에 의해 내림차순 정렬
 
     for (auto it = values.begin(); it != values.end(); ++it) { // 수열 출력
         std::cout << ' ' << *it;
