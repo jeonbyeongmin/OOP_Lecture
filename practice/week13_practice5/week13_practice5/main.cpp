@@ -5,10 +5,18 @@
 //  Created by 전병민 on 2020/11/24.
 //
 
-#include <iostream>
+template<typename T>
+class PairXX {
+public:
+    PairXX(T x = 0.0, T y = 0.0) : x_(x), y_(y) {}
+    T returnX() const { return x_; }
+    T returnY() const { return y_; }
+private:
+    T x_, y_;
+};
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    PairXX<double> pd;
+    PairXX<float> pf;
     return 0;
 }
