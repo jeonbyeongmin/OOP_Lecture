@@ -50,6 +50,9 @@ vector<string> wordsToLines(vector<string> words) {
         if ((line + temp).size() > 75) {
             lines.push_back(line);
             line = temp.substr(1);
+            if (i == words.size() - 1) {
+                lines.push_back(line);
+            }
         }
         else if ((line + temp).size() == 75) {
             line += temp;
@@ -58,6 +61,9 @@ vector<string> wordsToLines(vector<string> words) {
         }
         else {
             line += temp;
+            if (i == words.size() - 1) {
+                lines.push_back(line);
+            }
         }
     }
     return lines;
@@ -243,6 +249,19 @@ private:
                         lines[stoi(elements[0]) - 1] = newStr;
                         lines = update(lines);
                         console = "삽입 완료";
+
+                        isFirstPage = 0;
+                        isLastPage = 0;
+
+                        if (count == 1) {
+                            isFirstPage = 1;
+                        }
+
+                        if (count > lines.size() - 20) {
+                            count = lines.size() - 19;
+                            isLastPage = 1;
+                        }
+
                     }
 
                 }
@@ -253,7 +272,6 @@ private:
         }
         system("cls");
     }
-
 };
 
 // Delete Instruction ===========================================================================================================
@@ -299,7 +317,19 @@ private:
 
                     lines[stoi(elements[0]) - 1] = newStr;
                     lines = update(lines);
-                    console = "";
+
+                    console = "삭제 완료";
+                    isFirstPage = 0;
+                    isLastPage = 0;
+
+                    if (count == 1) {
+                        isFirstPage = 1;
+                    }
+
+                    if (count > lines.size() - 20) {
+                        count = lines.size() - 19;
+                        isLastPage = 1;
+                    }
                 }
 
             }
@@ -348,8 +378,17 @@ private:
 
         if (find) {
             count = lineCount;
-            isLastPage = 0;
             isFirstPage = 0;
+            isLastPage = 0;
+
+            if (count == 1) {
+                isFirstPage = 1;
+            }
+
+            if (count > lines.size() - 20) {
+                count = lines.size() - 19;
+                isLastPage = 1;
+            }
             console = elements[0] + "는 " + to_string(lineCount) + "번째 줄에서 " + to_string(wordCount) + "번째 단어입니다.";
         }
         else {
@@ -388,6 +427,19 @@ private:
             if (changeCount > 0) {
                 lines = wordsToLines(words);
                 console = "변경되었습니다.";
+
+                
+                isFirstPage = 0;
+                isLastPage = 0;
+
+                if (count == 1) {
+                    isFirstPage = 1;
+                }
+
+                if (count > lines.size() - 20) {
+                    count = lines.size() - 19;
+                    isLastPage = 1;
+                }
             }
             else {
                 console = elements[0] + "가 전체 문서에 없습니다.";
@@ -408,9 +460,7 @@ private:
     void nextPage() {
         if (count + 20 > lines.size()) {
             count = lines.size() - 19;
-
             console = "";
-
             if (isLastPage >= 1) {
                 console = "마지막 페이지 입니다.";
             }
