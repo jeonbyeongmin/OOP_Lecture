@@ -204,7 +204,7 @@ private:
     void insert_target() {
         count = count - 20;
 
-        if (!isDisit(elements[0]) || !isDisit(elements[1])) { // 첫번째 인자가 숫자가 아니라면?
+        if (!isDisit(elements[0]) || !isDisit(elements[1])) {
             console = "입력이 올바르지 않습니다. 첫번째와 두번째 인자는 양의 정수여야 합니다.";
         }
         else {
@@ -269,7 +269,7 @@ private:
     vector<string> elements;
     void delete_target() {
         count = count - 20;
-        if (!isDisit(elements[0]) || !isDisit(elements[1])) { // 첫번째 인자가 숫자가 아니라면?
+        if (!isDisit(elements[0]) || !isDisit(elements[1])) {
             console = "입력이 올바르지 않습니다. 첫번째와 두번째 인자는 양의 정수여야 합니다.";
         }
         else {
