@@ -348,6 +348,8 @@ private:
 
         if (find) {
             count = lineCount;
+            isLastPage = 0;
+            isFirstPage = 0;
             console = elements[0] + "는 " + to_string(lineCount) + "번째 줄에서 " + to_string(wordCount) + "번째 단어입니다.";
         }
         else {
@@ -407,11 +409,13 @@ private:
         if (count + 20 > lines.size()) {
             count = lines.size() - 19;
 
+            console = "";
+
             if (isLastPage >= 1) {
                 console = "마지막 페이지 입니다.";
             }
             isLastPage++;
-
+            
         }
         else {
             console = "";
@@ -433,11 +437,11 @@ private:
     void prevPage() {
         if (count - 40 <= 1) {
             count = 1;
+            console = "";
 
             if (isFirstPage >= 1) {
                 console = "첫 페이지 입니다.";
             }
-
             isFirstPage++;
         }
         else {
